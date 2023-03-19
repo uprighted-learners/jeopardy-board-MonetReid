@@ -8,14 +8,19 @@
     <link rel="stylesheet" href="./styles/styles.css">
   </head>
   <body>
-    <header><h1>Welcome to Jeopardy!</h1></header>
-    <!-- Do not change the script source. Allows import/export to work. -->
-    <script src="./scripts/index.js" type="module"></script>
-    <img src="https://ntvb.tmsimg.com/assets/p184056_b_h8_ar.jpg?w=960&h=540" alt="Jeopardy Image">
-    <div class= "Button">
-      <a href="round-1.html">PLAY</a>
+    <!-- give header id -->
+    <header id="opening_message"><h1>Welcome to Jeopardy!</h1></header>
+   <!-- insert Jeopardy Image -->
+    <img id="opening_image" src="https://ntvb.tmsimg.com/assets/p184056_b_h8_ar.jpg?w=960&h=540" alt="Jeopardy Image">
+    <!-- insert play button that sends you to round one -->
+    <div class= "button">
+      <a id="play_button" href="round-1.html">PLAY</a>
     </div>
     <br>
-    <footer><b>Monet's Amazing Jeopardy</b></footer>
+    <footer class= "footer" ><b>Monet's Amazing Jeopardy</b></footer>
+     
+    
+    <!-- Do not change the script source. Allows import/export to work. -->
+    <script src="./scripts/index.js" type="module"></script>
 </body>
 </html>
