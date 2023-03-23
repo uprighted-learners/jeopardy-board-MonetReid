@@ -9,55 +9,54 @@
     <script src="./scripts/index.js" type="module"></script>
   </head>
   <body>
-    <H1>Second Round</H1>
-    <div>
-      <header>Player Two's Turn</header>
-    </div>
+    <H1>ROUND TWO</H1>
+    <h2 class="players-turn" id="roundTwoPlayer"><i>READY</i></h2>
   </div>
   <div class="gridContainer">
-    <div class="gridCategory">Nature</div>
-      <div class="gridCategory">Animals</div>
-      <div class="gridCategory">Computers</div>
-      <div class="gridCategory">Mythology</div>
-      <div class="gridCategory">History</div>
-      <div class="gridCategory">General</div>
-      <div class="gridItem">200</div>
-      <div class="gridItem">200</div>
-      <div class="gridItem">200</div>
-      <div class="gridItem">200</div>
-      <div class="gridItem">200</div>
-      <div class="gridItem">200</div>
-      <div class="gridItem">400</div>
-      <div class="gridItem">400</div>
-      <div class="gridItem">400</div>
-      <div class="gridItem">400</div>
-      <div class="gridItem">400</div>
-      <div class="gridItem">400</div>
-      <div class="gridItem">600</div>
-      <div class="gridItem">600</div>
-      <div class="gridItem">600</div>
-      <div class="gridItem">600</div>
-      <div class="gridItem">600</div>
-      <div class="gridItem">600</div>
-      <div class="gridItem">800</div>
-      <div class="gridItem">800</div>
-      <div class="gridItem">800</div>
-      <div class="gridItem">800</div>
-      <div class="gridItem">800</div>
-      <div class="gridItem">800</div>
-      <div class="gridItem">1000</div>
-      <div class="gridItem">1000</div>
-      <div class="gridItem">1000</div>
-      <div class="gridItem">1000</div>
-      <div class="gridItem">1000</div>
-      <div class="gridItem">1000</div>
+    <!-- Should I make a separate class for each category? -->
+    <div class="griditemN" class="gridCategory">Nature</div>
+    <div class="gridItemA" class="gridCategory">Animals</div>
+    <div class="gridItemC" class="gridCategory">Computers</div>
+    <div class="gridItemM" class="gridCategory">Mythology</div>
+    <div class="gridItemH" class="gridCategory">History</div>
+    <div class="gridItemG" class="gridCategory">General</div>
+    <div class="gridItemN">200</div>
+    <div class="gridItemA">200</div>
+    <div class="gridItemC">200</div>
+    <div class="gridItemM">200</div>
+    <div class="gridItemH">200</div>
+    <div class="gridItemG">200</div>
+    <div class="gridItemN">400</div>
+    <div class="gridItemA">400</div>
+    <div class="gridItemC">400</div>
+    <div class="gridItemM">400</div>
+    <div class="gridItemH">400</div>
+    <div class="gridItemG">400</div>
+    <div class="gridItemN">600</div>
+    <div class="gridItemA">600</div>
+    <div class="gridItemC">600</div>
+    <div class="gridItemM">600</div>
+    <div class="gridItemH">600</div>
+    <div class="gridItemG">600</div>
+    <div class="gridItemN">800</div>
+    <div class="gridItemA">800</div>
+    <div class="gridItemC">800</div>
+    <div class="gridItemM">800</div>
+    <div class="gridItemH">800</div>
+    <div class="gridItemG">800</div>
+    <div class="gridItemN">1000</div>
+    <div class="gridItemA">1000</div>
+    <div class="gridItemC">1000</div>
+    <div class="gridItemM">1000</div>
+    <div class="gridItemH">1000</div>
+    <div class="gridItemG">1000</div>
     
   </div>
   <br>
   <div class="answerButton">
       <div class="answerInput"><input type="Answer" value="your answer"></div>
-        <div><button>Guess</button></div>
-        <div><button>Pass</button></div>
+        <div class="passClass"><button>Guess</button></div>
+        <div class="passClass"><button>Pass</button></div>
   </div>
   <br>
   <div class = "playerScore">

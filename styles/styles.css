@@ -87,12 +87,12 @@ img {
 /* .gridCategory:hover {
   background-color: aquamarine;
     color: blueviolet;  
-} */
-.gridItem:hover {
+} */ 
+.gridItemN:hover, .gridItemA:hover, .gridItemC:hover, .gridItemH:hover, .gridItemM:hover, .gridItemG:hover {
     background-color: aquamarine;
     color: blueviolet;
 }
-.gridItem1 {
+.gridItemN, .gridItemA, .gridItemC, .gridItemH, .gridItemM, .gridItemG {
     display: grid;
     border: solid black;
     padding: 10%;
@@ -105,7 +105,7 @@ img {
     font-family:Impact, 'Arial Narrow Bold', sans-serif;
     text-align: center;
 }
-.gridItem {
+.gridItemN, .gridItemA, .gridItemC, .gridItemH, .gridItemM, .gridItemG {
     display: grid;
     border: solid black;
     padding: 10%;

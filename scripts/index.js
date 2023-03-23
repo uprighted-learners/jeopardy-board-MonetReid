@@ -7,30 +7,44 @@ console.log({ placeholderQuestions });
 console.log(placeholderQuestions[0])
 // When I need a question/Answer I can iterate over the array
 
-//? API URLS
-const url = "https://jservice.io/api/categories?count=100"
-let buildURL = 
-// categoryAPI = "/api/categories";
-// questionAPI = "{"id":1189,"answer":"Brylcreem","question":"It was claimed of this product \"a little dab'll do ya\"","value":300,"airdate":"1984-10-04T19:00:00.000Z","created_at":"2022-12-30T18:38:06.972Z","updated_at":"2022-12-30T18:38:06.972Z","category_id":20,"game_id":5243,"invalid_count":null,"category":{"id":20,"title":"trivia","created_at":"2022-12-30T18:37:38.723Z","updated_at":"2022-12-30T18:37:38.723Z","clues_count":92}}
-// "
-// finalAPI = "/api/final"
+
+// Function to grab questions on click
 
 
 
 // * Player Array
-// let gamePlayer = ["playerOne", "playerTwo"];
+ let gamePlayer = ["PLAYER ONE", "PLAYER TWO"];
 
 //* Global classes 
 let button = document.getElementsByClassName("button");
 let footer = document.getElementsByClassName("footer");
 let playersTurn = document.getElementsByClassName("players-turn");
-//playersTurn = gamePlayer
+
+//* Global Game Container Variables
 let gridContainer = document.getElementsByClassName("gridContainer");
 let gridCategory = document.getElementsByClassName("gridCategory");
+let gridItemN = document.getElementsByClassName("gridItemN");
+let gridItemA = document.getElementsByClassName("gridItemA");
+let gridItemC = document.getElementsByClassName("gridItemC");
+let gridItemM = document.getElementsByClassName("gridItemM");
+let gridItemH = document.getElementsByClassName("gridItemH");
+let gridItemG = document.getElementsByClassName("gridItemG");
 let gridItem = document.getElementsByClassName("gridItem");
+// Make array for our for loop of categories
+let categoryArray = [gridItemN, gridItemA, gridItemC, gridItemM, gridItemH, gridItemG];
+let categoryIteration = 0;
+let skipThruCat = 0;
+
+//* Global Score Variables
 let playerScore = document.getElementsByClassName("playerScore");
 let playerScore1 = document.getElementsByClassName("playerScore1");
 let playerScore2 = document.getElementsByClassName("playerScore2");
+let guessAttempts = 0;
+
+playerScore1 = 0; // beginning scores are 0
+playerScore2 = 0; // beginning scores are 0
+
+//* Global Answer Input Variables
 let answerInput = document.getElementsByClassName("answerInput");
 let answerButton = document.getElementsByClassName("answerButton");
 
@@ -41,26 +55,44 @@ let openingMessage = document.getElementById("opening_message");
 let playButton = document.getElementById("play_button");
 
 let openingImage = document.getElementById("opening_image");
+let roundOnePlayer = document.getElementById("roundOnePlayer");
+let roundTwoPlayer = document.getElementById("roundTwoPlayer");
+let finalRoundPlayer = document.getElementById("finalRoundPlayer");
 
 
 //* index.html click function to send players to round-1.html
 
-playButton.addEventListener("click", (event) => {
-    document.location.href = ".round-1.html"
+// playButton.addEventListener("click", (event) => {
+//     console.log(document.location)
+//     document.location.href = "./round-1.html" // do I need "."?
+
    
-})
+// })
 
 //Append Elements 
-body.appendChild(playButton);
+//body.appendChild(playButton);
 
 //! "return data" for json file
 //? ROUND-1.HMTL
-//* round-1.html variables (id)
-let roundOnePlayer = document.getElementById("round-one-player");
-
 // find event that works when page loads... try: "load", "pageshow"
-roundOnePlayer.addEventListener("load", (e) => {
-   roundOnePlayer.textContent = `${gamePlayer[0]} ` ;
+window.addEventListener("load", (e) => {
+    //console.log("trying to run load")
+   roundOnePlayer.innerHTML = `<i>READY</i> ${gamePlayer[0]} ` ;
+   // disable answerButtons
+   document.answerButton.disabled = true;
+})
+
+window.addEventListener("load", (e) => {
+    //console.log("trying to run load")
+   roundTwoPlayer.innerHTML = `<i>READY</i> ${gamePlayer[1]} `;
+   // disable answerButtons
+   document.answerButton.disabled = true;
+})
+
+window.addEventListener("load", (e) => {
+    //console.log("trying to run load")
+    //* make it player who has highest score turn
+   finalRoundPlayer.innerHTML = `<i>READY</i> ${gamePlayer[0]} ` ;
    // disable answerButtons
    document.answerButton.disabled = true;
 })
@@ -72,13 +104,85 @@ div.appendChild(answerButton);
 
 //! FUNCTIONS
 
-// ONLY ONE QUESTION FUNCTION
+//? .JSON file fetch
+// variable
+let json = "scripts/questions.json";
+let questionIteration = 0;
 
+
+// Function to grab categories from json file 
+function fetchCategory() {
+    fetch(json)
+    .then((res) => res.json())
+    .then((data) => {
+      let members = data.placeholderQuestions;
+      while  (categoryIteration < 6) {
+        categoryArray[categoryIteration].textContent[skipThruCat].category;
+        categoryIteration++;
+        skipThruCat = skipThruCat + 10;  
+      }
+    })
+    //The catch() method of a Promise object schedules a function to be called when the promise is rejected. It immediately returns an equivalent Promise object, allowing you to chain calls to other promise methods.
+      .catch((err) => console.error(err));
+}
+
+fetchCategory(); // not sure if this is necessary here.
+
+// create for loop for questions 
+let testJSON = JSON.parse(json)
+
+gridContainer.addEventListener("click", (e) => {
+    if (e == gridContainer.gridItemN) {
+        getCatQuestion(0-10);
+    } else if ( e == gridContainer.gridItemA) {
+        getCatQuestion(11-20);
+    } else if (e == gridContainer.gridItemC ) {
+        getCatQuestion(21-30);
+    } else if (e == gridContainer.gridItemM) {
+        getCatQuestion(31-40);
+    } else if (e == gridContainer.gridItemH) {
+        getCatQuestion(41-50);
+    } else if (e == gridContainer.gridItemG) {
+        getCatQuestion(51-60);
+    } else { console.error("error")}
+
+})
+
+function getCatQuestion() {
+    fetch(json)
+      .then((res) => res.json())
+      .then((data) => {
+   let  membersQ = data.placeholderQuestions[1]
+      }
+  )}
+
+gridCategory.appendChild(gridItem);
 // FETCH QUESTION FUNCTION
 
 // ANSWER QUESTION- CORRECT OR INCORRECT - GUESS OR PASS - IF/ELSE?
 
-// CHANGE SCORE FUNCTION - SCORE = POINTS ON CARD
+//* CHANGE SCORE FUNCTION - SCORE = POINTS ON CARD
+// feed "click" the .innertext of card value into score if correct
+gridItem.addEventListener("click", (event) => {
+    if (answerInput.value == data.answer) {
+        addPoints();
+    } else { subtractPoints();}
+    
+   
+})
+// catch (err) {
+//     console.error(err);
+// }
+//Function to add points
+function addPoints() {
+
+}
+
+// Function to take away points
+function subtractPoints() {
+
+}
+// parse
 
 //? ROUND-2.HTML
 
