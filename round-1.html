@@ -1,3 +1,4 @@
+<!-- SECOND PAGE -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,13 +9,14 @@
     <link rel="stylesheet" href="./styles/styles.css">
   </head>
   <body>
-    <!-- Page HEADER -->
+    <!-- Header/center -->
     <h1>Round One</h1>
     <!-- I made two just in case it's easier to fill second h2 on "load" -->
+    <!-- Let player know you are ready to begin -->
     <h2 class="players-turn" id="roundOnePlayer"><i>READY</i></h2>
     
     <div class="gridContainer">
-      <!-- Should I make a separate class for each category? -->
+      <!-- 6 categories with 5 questions per category grid -->
       <div class="griditemN" class="gridCategory">Nature</div>
       <div class="gridItemA" class="gridCategory">Animals</div>
       <div class="gridItemC" class="gridCategory">Computers</div>
@@ -54,18 +56,21 @@
       
     </div>
     <br>
+    <!--  button for submitting answer/ guess/ pass -->
     <div class ="answerButton">
       <div class="answerInput"><input type="Answer" value="your answer"></div>
         <div class="guessClass"><button>Guess</button></div>
         <div class="passClass"><button>Pass</button></div>
     </div>
   <br>
+  <!-- display player's scores -->
   <div class = "playerScore">
     <h3 class = "playerScore1"><b>Player 1 Score 0</b></h3>
     <h3 class = "playerScore2"><b>Player 2 Score 0</b></h3>
   </div>
     <a class="nextRoundButton" type ="button" href="round-2.html">ROUND TWO</a>
     <br>
+     <!-- footer that continues on every page/ bottom -->
     <footer class="footer"><b>Monet's Amazing Jeopardy</b></footer>
     <!-- Do not change the script source. Allows import/export to work. -->
     <script src="./scripts/index.js" type="module"></script>

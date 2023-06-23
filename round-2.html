@@ -1,3 +1,4 @@
+<!-- THIRD PAGE -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,11 +10,13 @@
     <script src="./scripts/index.js" type="module"></script>
   </head>
   <body>
+     <!-- Header/center -->
     <H1>ROUND TWO</H1>
+    <!-- Let player know you are ready to begin -->
     <h2 class="players-turn" id="roundTwoPlayer"><i>READY</i></h2>
   </div>
   <div class="gridContainer">
-    <!-- Should I make a separate class for each category? -->
+    <!-- 6 categories with 5 questions per category grid -->
     <div class="griditemN" class="gridCategory">Nature</div>
     <div class="gridItemA" class="gridCategory">Animals</div>
     <div class="gridItemC" class="gridCategory">Computers</div>
@@ -53,14 +56,16 @@
     
   </div>
   <br>
+  <!--  button for submitting answer/ guess/ pass -->
   <div class="answerButton">
       <div class="answerInput"><input type="Answer" value="your answer"></div>
         <div class="passClass"><button>Guess</button></div>
         <div class="passClass"><button>Pass</button></div>
   </div>
-  <br>
+  <br> 
+  <!-- display player's scores -->
   <div class = "playerScore">
-    <!-- Turn scores into a function not hardcoded -->
+   
       <h3><b>Player 1 Score 0</b></h3>
       <h3><b>Player 2 Score 0</b></h3>
   </div>
@@ -68,6 +73,7 @@
   <a class= "nextRoundButton" href="final-jeopardy.html">FINAL ROUND</a>
     
     <br>
+     <!-- footer that continues on every page/ bottom -->
     <footer class="footer"><b>Monet's Amazing Jeopardy</b></footer>
     <!-- Do not change the script source. Allows import/export to work. -->
     <script src="./scripts/index.js" type="module"></script>
